@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleiderspenden-Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <span>KSP</span>
+        </a>
+      </div>
+
+      <div class="title-area">
+        <h1>Kleiderspenden-Portal</h1>
+      </div>
+
+      <button class="menu-toggle" aria-label="Navigation umschalten">
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="index.html" class="active">Start</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-card">
+      <h2>Registriere deine Kleiderspende</h2>
+      <p>Hier kannst du deine Kleiderspende erfassen und ein Krisengebiet auswählen.</p>
+
+      <div id="formular-bereich">
+        <form id="spendenForm">
+
+          <label>Wie möchtest du spenden?</label><br>
+
+          <div class="radio-row">
+            <label>
+              Übergabe an der Geschäftsstelle
+              <input type="radio" name="art" value="uebergabe" checked>
+            </label>
+
+            <label>
+              Abholung durch Sammelfahrzeug
+              <input type="radio" name="art" value="abholung">
+            </label>
+          </div>
+          <br>
+
+          <label>Art der Kleidung:</label><br>
+          <select id="kleidungsart">
+            <option value="Jacken">Jacken</option>
+            <option value="Hosen">Hosen</option>
+            <option value="Schuhe">Schuhe</option>
+            <option value="T-Shirts">T-Shirts</option>
+          </select><br><br>
+
+          <label>Krisengebiet:</label><br>
+          <select id="krisengebiet">
+            <option value="Region A">Region A</option>
+            <option value="Region B">Region B</option>
+            <option value="Region C">Region C</option>
+          </select><br><br>
+
+          <div id="adresseBereich" style="display:none;">
+            <label>Abholadresse:</label><br>
+            <input id="strasse" type="text" placeholder="Straße"><br><br>
+            <input id="plz" type="text" placeholder="PLZ"><br><br>
+            <input id="ort" type="text" placeholder="Ort"><br><br>
+          </div>
+
+          <button type="button" id="absendenBtn">Spende registrieren</button>
+        </form>
+
+        <div id="bestaetigung" style="display:none;"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Gemeinnütziger Verein Kleiderspenden e.V. –
+      <a href="rechtliches.html">Rechtliche Hinweise</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
