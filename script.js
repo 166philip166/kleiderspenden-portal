@@ -29,8 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const absendenBtn = document.getElementById("absendenBtn");
   const bestaetigungDiv = document.getElementById("bestaetigung");
 
-  // Erlaubte PLZ-Prefixe für Wien: 10xx, 11xx, 12xx
-  const erlaubteWienPrefixes = ["10", "11", "12"];
+  // Liste aller echten Wiener Bezirks-Postleitzahlen
+  const echteWienPLZ = [
+    "1010","1020","1030","1040","1050","1060","1070","1080","1090",
+    "1100","1110","1120","1130","1140","1150","1160","1170","1180","1190",
+    "1200","1210","1220","1230"
+  ];
 
   function aktualisiereAdresseBereich() {
     if (radioAbholung.checked) {
@@ -77,11 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // erste zwei Ziffern der PLZ holen
-      const ersteZwei = plz.substring(0, 2);
-
-      if (!erlaubteWienPrefixes.includes(ersteZwei)) {
-        alert("Die Abholadresse muss in Wien liegen. Die ersten beiden Ziffern der PLZ müssen mit 10, 11 oder 12 beginnen.");
+      // NEUE PLZ-VALIDIERUNG: nur echte Wiener Bezirke
+      if (!echteWienPLZ.includes(plz)) {
+        alert("Bitte eine gültige Wiener Postleitzahl eingeben (1010–1230).");
         resetButton();
         return;
       }
